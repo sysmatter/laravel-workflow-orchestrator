@@ -11,7 +11,6 @@ integration, retry logic, and comprehensive monitoring.
 - **State Management** - Powered
   by [sysmatter/laravel-status-machina](https://github.com/sysmatter/laravel-status-machina)
 - **Activity Logging** - Optional audit trail with Spatie Activity Log
-- **Filament Admin UI** - Optional monitoring and management interface
 - **High Performance** - Concurrent execution with spatie/fork
 - **Developer Friendly** - Clean API with facades and artisan commands
 
@@ -550,18 +549,6 @@ php artisan workflow:retry {workflow_id} --from-action=3
 php artisan workflow:cancel {workflow_id}
 ```
 
-## Filament Admin UI
-
-If you're using Filament, the package includes a comprehensive admin interface:
-
-1. View all workflows with filtering and sorting
-2. Monitor workflow progress and action statuses
-3. Resume paused workflows
-4. Cancel running workflows
-5. View detailed context and error information
-
-The Filament integration can be disabled in the config if not needed.
-
 ## Advanced Usage
 
 ### Custom Workflow Context
@@ -719,12 +706,6 @@ return [
     'activity_log' => [
         'enabled' => true, // Enable workflow-specific activity logging
         'log_name' => 'workflow', // Log name for Spatie Activity Log
-    ],
-    
-    // Filament admin UI
-    'filament' => [
-        'enabled' => true,
-        'register_resource' => true,
     ],
 ];
 ```
